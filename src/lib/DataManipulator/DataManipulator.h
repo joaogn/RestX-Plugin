@@ -1,3 +1,4 @@
+#include "XPLM/XPLMDataAccess.h"
 #include <nlohmann/json.hpp>
 #include <cstdlib>
 
@@ -6,28 +7,31 @@ using json = nlohmann::json;
 
 namespace manipulator
 {
+  typedef XPLMDataRef XPLMRef;
 
   uint64_t GetDataRefReference(string data_ref);
 
+  bool GetDataRefWitrable(uint64_t ref);
+
+  bool GetDataRefGood(uint64_t ref);
+
   json GetDataRefValue(uint64_t ref);
-
-  json GetDataRefWitrable(uint64_t ref);
-
-  json GetDataRefGood(uint64_t ref);
 
   json SetDataRefValue(uint64_t ref);
 
-  int ReadDataRefInt(uint64_t ref);
+  // *private*
 
-  float ReadDataRefFloat(uint64_t ref);
+  int ReadDataRefInt(XPLMRef gDataRef);
 
-  double ReadDataRefDouble(uint64_t ref);
+  float ReadDataRefFloat(XPLMRef gDataRef);
 
-  vector<int> ReadDataRefIntArray(uint64_t ref);
+  double ReadDataRefDouble(XPLMRef gDataRef);
 
-  vector<float> ReadDataRefFloatArray(uint64_t ref);
+  vector<int> ReadDataRefIntArray(XPLMRef gDataRef);
 
-  vector<uint8_t> ReadDataRefByteArray(uint64_t ref);
+  vector<float> ReadDataRefFloatArray(XPLMRef gDataRef);
+
+  string ReadDataRefByteArray(XPLMRef gDataRef);
 
   void WriteDataRefInt(uint64_t ref, json newValue);
 
