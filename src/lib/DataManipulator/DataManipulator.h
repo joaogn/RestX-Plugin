@@ -17,7 +17,7 @@ namespace manipulator
 
   json GetDataRefValue(uint64_t ref);
 
-  json SetDataRefValue(uint64_t ref);
+  json SetDataRefValue(uint64_t ref, json newValue);
 
   // *private*
 
@@ -33,16 +33,16 @@ namespace manipulator
 
   string ReadDataRefByteArray(XPLMRef gDataRef);
 
-  void WriteDataRefInt(uint64_t ref, json newValue);
+  json WriteDataRefInt(XPLMRef gDataRef, json newValue);
 
-  void WriteDataRefFloat(uint64_t ref, json newValue);
+  json WriteDataRefFloat(XPLMRef gDataRef, json newValue);
 
-  void WriteDataRefDouble(uint64_t ref, json newValue);
+  json WriteDataRefDouble(XPLMRef gDataRef, json newValue);
 
-  void WriteDataRefIntArray(uint64_t ref, json newValue);
+  json WriteDataRefIntArray(XPLMRef gDataRef, json newValue);
 
-  void WriteDataRefFloatArray(uint64_t ref, json newValue);
+  json WriteDataRefFloatArray(XPLMRef gDataRef, json newValue);
 
-  void WriteDataRefByteArray(uint64_t ref, json newValue);
+  json WriteDataRefByteArray(XPLMRef gDataRef, json newValue);
 
 } // namespace manipulator
