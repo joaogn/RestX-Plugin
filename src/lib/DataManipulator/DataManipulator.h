@@ -15,6 +15,8 @@ namespace manipulator
 
   bool GetDataRefGood(uint64_t ref);
 
+  string GetDataRefType(uint64_t ref);
+
   json GetDataRefValue(uint64_t ref);
 
   json SetDataRefValue(uint64_t ref, json newValue);

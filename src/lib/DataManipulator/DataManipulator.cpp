@@ -21,6 +21,29 @@ namespace manipulator
     return XPLMIsDataRefGood((XPLMDataRef)ref);
   }
 
+  string GetDataRefType(uint64_t ref)
+  {
+    XPLMDataTypeID gDataRefType = XPLMGetDataRefTypes((XPLMDataRef)ref);
+
+    switch (gDataRefType)
+    {
+    case xplmType_Int:
+      return "Int";
+    case xplmType_Float:
+      return "Float";
+    case xplmType_Double:
+      return "Double";
+    case xplmType_FloatArray:
+      return "Float";
+    case xplmType_IntArray:
+      return "IntArray";
+    case xplmType_Data:
+      return "Data";
+    default:
+      return "Unknow";
+    }
+  }
+
   json GetDataRefValue(uint64_t ref)
   {
     XPLMRef gDataRef = (XPLMDataRef)ref;
