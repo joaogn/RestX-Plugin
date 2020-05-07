@@ -20,6 +20,7 @@ namespace server
 
       auto settings = make_shared<Settings>();
       settings->set_port(1984);
+      settings->set_worker_limit(2);
       settings->set_default_header("Access-Control-Allow-Origin", "*");
       settings->set_default_header("Connection", "close");
 
