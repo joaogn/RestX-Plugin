@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <restbed>
 #include "src/server/routes/DataRefRoutes/DataRefRoutes.h"
+#include "src/server/routes/ErrorHandlerRoutes/ErrorHandlerRoutes.h"
 
 using namespace routes;
 using namespace restbed;
@@ -16,6 +17,7 @@ namespace server
   {
     Service service;
     DataRefRoutes dataRefRoutes;
+    ErrorHandlerRoutes errorHandlerRoutes;
 
   public:
     void StartServer();
